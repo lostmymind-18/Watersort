@@ -1,5 +1,5 @@
 import testGenerator
-import astar
+import astar, bfs
 import globals
 
 def initialState():
@@ -10,9 +10,17 @@ def initialState():
     return goalCase
 
 #Ham nay dung de ve, tuong tac va goi ham algorithm
-def main():
+def main(option = None):
     globals.initialize()
-    backtrack,count = astar.algorithm(initialState)
+    backtrack = None
+    count = None 
+    #Chon BFS or Astar
+    while option != 'A' and option != 'B':
+        option = input("Please press 'B' for BFS, 'A' for Astar\n")
+        if option == 'A':
+            backtrack,count = astar.algorithm(initialState())
+        elif option == 'B':
+            backtrack,count = bfs.algorithm(initialState())
     for i in range(len(backtrack)-1,0,-1):
         #Chay doc theo cac binh, neu ma thay co su thay doi ve length
     #neu ma la be hon thi binh do la binh cho, con neu ma lon hon la binh nhan
@@ -27,6 +35,5 @@ def main():
      #   current = backtrack.pop()
       #  print(current.state)
     print(len(backtrack),"steps")
-    print(count)
-        
+    print(count,"traversed states") 
 main()

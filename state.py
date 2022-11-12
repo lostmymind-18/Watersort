@@ -1,9 +1,5 @@
 import globals
 
-class State:
-    def __init__(self,state=[]):
-        self.state=state
-
 #Kiem tra trang thai hien tai da la goal hay chua
 def checkGoal(state):
     #Di tung binh, neu binh nao khong rong va co 2 mau khac nhau thi return false

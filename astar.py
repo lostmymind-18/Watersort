@@ -19,7 +19,7 @@ def h(currentState):
     value+=sum(bottom.values())
     return value
 
-def algorithm(initialState):
+def algorithm(ini):
     count_gen=0 #Đếm các trạng thái đã tao ra
     count = 0 #Dem cac node da check
     backtrack=deque()   #dùng để backtrack lại path
@@ -27,15 +27,15 @@ def algorithm(initialState):
     g_score = {} #Dùng để lưu các giá trị g của các trạng thái, cũng như là để so sánh và cập nhật giá trị tối ưu cho g
     cameFrom={} #Dùng để đánh dấu lại một trạng thái tới từ đâu
     #create an initial state object
-    ini=initialState()
     queue.put((0,count_gen,ini)) #Đưa trạng thái đầu tiên vào stack
     g_score[ini] = 0  #Giá trị g cho trạng thái khởi đầu là 0.
-    while queue:
+    while not queue.empty():
         current=queue.get()[2]
         count+=1
         #Kiểm tra goal
         if state.checkGoal(current):
             backtrack=reconstruct.reconstruct(cameFrom,current)
+            #print("Solution found")
             return backtrack,count
 		#Tao mot vong lap di qua tung binh
         for i in range(globals.numBot):
@@ -74,3 +74,5 @@ def algorithm(initialState):
 
     #return backtrack
     print("Cannot find solution!")
+    print(ini)
+    return None,None
