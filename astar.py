@@ -1,6 +1,7 @@
 from queue import PriorityQueue
 from collections import deque
 import state,reconstruct, copy, globals
+import draw
 #Heuristic function
 def h(currentState):
     bottom={}
@@ -32,6 +33,7 @@ def algorithm(ini):
     while not queue.empty():
         current=queue.get()[2]
         count+=1
+        draw.draw(current,count)
         #Kiểm tra goal
         if state.checkGoal(current):
             backtrack=reconstruct.reconstruct(cameFrom,current)
