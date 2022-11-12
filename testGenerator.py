@@ -58,6 +58,7 @@ def genTest(numBot,botHei):
         notEmpty.add(botB) 
         if(len(goalCase[botB]) == botHei):
             notFull.remove(botB)
-    print("Test case just generated: ",goalCase)
-    #goalCase = [[],[],['g', 'r' ,'r', 'b0'],['po', 'g0', 'br', 'po'],['br', 'y', 'y' ,'g0'],['g', 'o', 'o', 'g0'],['g', 'y', 'po', 'br'],['b0', 'po', 'b', 'o'],['b', 'b0', 'br', 'r'],['b', 'y', 'o', 'b'],['b0', 'g', 'r', 'g0']]
+    #print("Test case just generated: ",goalCase)
+    goalCase = [[],[],['g', 'r' ,'r', 'b0'],['po', 'g0', 'br', 'po'],['br', 'y', 'y' ,'g0'],['g', 'o', 'o', 'g0'],['g', 'y', 'po', 'br'],['b0', 'po', 'b', 'o'],['b', 'b0', 'br', 'r'],['b', 'y', 'o', 'b'],['b0', 'g', 'r', 'g0']]
+    goalCase = tuple(tuple(ele) for ele in goalCase)
     return goalCase

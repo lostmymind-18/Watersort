@@ -18,9 +18,9 @@ def main():
     #neu ma la be hon thi binh do la binh cho, con neu ma lon hon la binh nhan
         bcho,bnhan=0,0
         for j in range(globals.numBot):
-            if(len(backtrack[i].state[j]) > len(backtrack[i-1].state[j])):
+            if(len(backtrack[i][j]) > len(backtrack[i-1][j])):
                 bcho = j+1
-            elif (len(backtrack[i].state[j]) < len(backtrack[i-1].state[j])):
+            elif (len(backtrack[i][j]) < len(backtrack[i-1][j])):
                 bnhan=j+1
         print(bcho,'->',bnhan)
     #while backtrack:
