@@ -2,7 +2,7 @@ import globals
 import os
 #used to draw something to look at
 def draw(state, count):
-    os.system("clear")
+    os.system('cls' if os.name == 'nt' else 'clear')
     #Ve mot lan 5 chai
     #Tao mot bien luu vi tri cua chai bat dau ve
     pos = 0
