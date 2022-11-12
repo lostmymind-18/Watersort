@@ -12,14 +12,14 @@ def draw(state, count):
         #So chai duoc ve la min(tren, 5)
         numDraw = min(remain,5)
         #Tien hanh ve 5 chai do
-        for i in range (4+1):
+        for i in range (globals.botHei+1):
             for j in range (pos,pos+numDraw):
-                if i < 4:
-                    if 4-i-1 < len(state[j]):
-                        print("| ",state[j][4-i-1]," |",end='\t')
+                if i < globals.botHei:
+                    if globals.botHei-i-1 < len(state[j]):
+                        print("| ",state[j][globals.botHei-i-1]," |",end='\t')
                     else:
                         print("| ",'.'," |",end='\t')
-                if i == 4:
+                if i == globals.botHei:
                     print('\_____/',end='\t')
             print('')
         print('')
